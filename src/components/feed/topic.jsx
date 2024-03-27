@@ -42,8 +42,8 @@ export const Topic = ({ item }) => {
                 <div className="flex items-center gap-2">
                     {item.labels.map((label, i) => (
                         //PLACEHOLDER
-                        <Badge variant={getBadgeVariantFromLabel(label)}>
-                            <Link key={i} href={`/tag/${label}`}>
+                        <Badge key={i} variant={getBadgeVariantFromLabel(label)}>
+                            <Link href={`/tag/${label}`}>
                                 {label}
                             </Link>
                         </Badge>
