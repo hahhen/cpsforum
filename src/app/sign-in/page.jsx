@@ -1,17 +1,8 @@
-'use client'
-
 import Image from "next/image"
 import Link from "next/link"
 import SignInButton from "@/components/signin/signinbutton"
-import { useIsAuthenticated } from "@azure/msal-react"
-import { redirect } from "next/navigation"
 
-export default function AuthenticationPage() {
-    const isAuthenticated = useIsAuthenticated()
-    if (isAuthenticated) {
-        redirect('/')
-    }
-
+export default async function AuthenticationPage() {
     return (
         <div className="relative h-screen grid grid-cols-[70%_minmax(30%,_1fr)] bg-stone-800  bg-cover bg-center bg-origin-content bg-[url(/bg404.png)] animated-bg">
             <div className="relative hidden h-screen lg:flex flex-col">

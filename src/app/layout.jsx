@@ -1,5 +1,4 @@
 import './globals.css'
-import MyMsalProvider from '@/service/msal/MyMsalProvider'
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import StyledComponentsRegistry from "@/lib/registry";
@@ -8,10 +7,11 @@ import { Toaster } from "@/components/ui/sonner"
 import NextTopLoader from 'nextjs-toploader';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SessionProvider } from "next-auth/react";
 
 export default function RootLayout({ children }) {
   return (
-    <MyMsalProvider>
+    <SessionProvider>
       <html lang="pt-br" suppressHydrationWarning>
         <head>
           <link rel="icon" href="/favicon-black.svg" />
@@ -33,6 +33,6 @@ export default function RootLayout({ children }) {
           <SpeedInsights />
         </body>
       </html>
-    </MyMsalProvider>
+    </SessionProvider>
   )
 }
